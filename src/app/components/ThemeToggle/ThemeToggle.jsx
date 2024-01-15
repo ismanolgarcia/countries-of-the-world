@@ -28,7 +28,7 @@ export const ThemeToggle = () => {
   return (
     <button
       onClick={handleChangeTheme}
-      className="flex items-center capitalize gap-2 px-4 py-2 rounded dark:hover:bg-DeepSteelBlue hover:bg-MediunGray dark:text-SnowWhite hover:text-SnowWhite"
+      className="flex items-center capitalize gap-2 px-4 py-2 rounded hover:bg-MediunGray dark:text-SnowWhite hover:text-SnowWhite"
     >
       <Image
         src={theme == 'dark' ? moonIcon : sunDarkIcon}
