@@ -15,7 +15,15 @@ module.exports = {
       fontFamily: {
         nunito_sans: ['var(--font-nunito_sans)'],
       },
+      colors: {
+        Navy: '#202c37',
+        DeepSteelBlue: '#2b3945',
+        MidnightBlue: '#111517',
+        MediunGray: '#858585',
+        SnowWhite: '#fafafa',
+      },
     },
   },
+  darkMode: 'class',
   plugins: [],
 };
