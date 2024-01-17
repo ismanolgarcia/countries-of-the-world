@@ -7,7 +7,7 @@ import sunDarkIcon from '/public/icons/icons8-sol-48-dark.png';
 
 export const ThemeToggle = () => {
   const [theme, setTheme] = useState(() => {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (globalThis.window?.matchMedia('(prefers-color-scheme: dark)').matches) {
       return 'dark';
     }
     return 'light';
@@ -27,6 +27,7 @@ export const ThemeToggle = () => {
 
   return (
     <button
+      suppressHydrationWarning={true}
       onClick={handleChangeTheme}
       className="flex items-center capitalize gap-2 px-4 py-2 rounded hover:bg-MediunGray dark:text-SnowWhite hover:text-SnowWhite"
     >

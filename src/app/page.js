@@ -1,4 +1,5 @@
 'use client';
+import { uid } from 'uid';
 import { useState } from 'react';
 import { SearchBar, Card } from './components';
 import data from '../data/data.json';
@@ -33,19 +34,17 @@ export default function Home() {
         handleFiltroChange={handleFiltroChange}
         selectRegion={selectRegion}
       />
-      <div className="flex flex-row flex-wrap justify-center gap-x-32 gap-y-10">
-        {countryResult.map(
-          ({ index, flags, name, population, region, capital }) => (
-            <Card
-              key={index}
-              flag={flags['svg']}
-              name={name}
-              population={population}
-              region={region}
-              capital={capital}
-            />
-          )
-        )}
+      <div className="flex flex-row flex-wrap justify-center sm:justify-normal gap-10  lg:gap-x-12 xl:gap-x-10  2xl:gap-x-32 gap-y-10">
+        {countryResult.map(({ flags, name, population, region, capital }) => (
+          <Card
+            key={uid()}
+            flag={flags['svg']}
+            name={name}
+            population={population}
+            region={region}
+            capital={capital}
+          />
+        ))}
       </div>
     </main>
   );
