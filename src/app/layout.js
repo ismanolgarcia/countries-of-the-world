@@ -1,6 +1,6 @@
 import './globals.css';
 import { nunito_sans } from './fonts/fonts';
-import { NavBar } from './components';
+import { Footer, NavBar } from './components';
 export const metadata = {
   title: 'Countries of the World',
   description:
@@ -13,6 +13,7 @@ export default function RootLayout({ children }) {
       <body className={`${nunito_sans.className} dark:bg-Navy`}>
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -3,7 +3,7 @@ import { uid } from 'uid';
 import { useState } from 'react';
 import { SearchBar, Card } from './components';
 import data from '../data/data.json';
-
+import Link from 'next/link';
 export default function Home() {
   const [country, setCountry] = useState('');
   const [countryResult, setCountryResult] = useState(data);
@@ -36,14 +36,21 @@ export default function Home() {
       />
       <div className="flex flex-row flex-wrap justify-center sm:justify-normal gap-10  lg:gap-x-12 xl:gap-x-10  2xl:gap-x-32 gap-y-10">
         {countryResult.map(({ flags, name, population, region, capital }) => (
-          <Card
+          <Link
             key={uid()}
-            flag={flags['svg']}
-            name={name}
-            population={population}
-            region={region}
-            capital={capital}
-          />
+            href={`country/${decodeURIComponent(name)
+              .toLowerCase()
+              .replace(/å/g, 'a')
+              .replace(/[\s,]/g, '-')}`}
+          >
+            <Card
+              flag={flags['svg']}
+              name={name}
+              population={population}
+              region={region}
+              capital={capital}
+            />
+          </Link>
         ))}
       </div>
     </main>
