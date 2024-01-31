@@ -12,7 +12,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${nunito_sans.className} dark:bg-Navy flex flex-col justify-between h-screen`}>
         <NavBar />
+        <main className='flex-1'>
         {children}
+        </main>
         <Footer />
       </body>
     </html>

@@ -15,7 +15,7 @@ export default function Countrys({ params }) {
   const {name, nativeName, flag, population, region, subregion, capital, topLevelDomain, currencies, languages} = country;
 
   return (
-    <main className="flex md:mt-0 mt-10 p-5">
+    <article className="flex md:mt-0 mt-10 p-5">
       <div className="container flex mx-auto gap-10 items-start flex-col md:flex-row xl:gap-24 md:items-end lg:items-center  ">
         <div className="md:h-[500px] md:w-[600px] flex flex-col gap-20">
           <Link
@@ -83,6 +83,6 @@ export default function Countrys({ params }) {
           </div>
         </div>
       </div>
-    </main>
+    </article>
   );
 }
