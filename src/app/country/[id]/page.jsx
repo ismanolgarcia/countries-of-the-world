@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import data from '../../../data/data.json';
 import leftIcon from '/public/icons/icons8-left.png';
+import { redirect } from 'next/navigation';
 
 export default function Countrys({ params }) {
   const country = data.find(
@@ -12,8 +13,11 @@ export default function Countrys({ params }) {
         .replace(/å/g, 'a') == params.id
   );
 
+  if (!country) {
+    redirect('/not-found');
+    return null;
+  }
   const {name, nativeName, flag, population, region, subregion, capital, topLevelDomain, currencies, languages} = country;
-
   return (
     <article className="flex md:mt-0 mt-10 p-5">
       <div className="container flex mx-auto gap-10 items-start flex-col md:flex-row xl:gap-24 md:items-end lg:items-center  ">
